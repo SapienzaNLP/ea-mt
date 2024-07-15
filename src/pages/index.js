@@ -84,7 +84,7 @@ export default function Home() {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Welcome to the official web page for our SemEval-2025 shared task: Entity-Aware Machine Translation!">
       <HomepageHeader />
       <main>
         <TaskBanner />
