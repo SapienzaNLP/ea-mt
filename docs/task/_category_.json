@@ -1,0 +1,8 @@
+{
+    "label": "The EA-MT Task",
+    "position": 1,
+    "link": {
+        "type": "generated-index",
+        "description": "All you need to know about our SemEval 2025 Task: \"Entity-Aware Machine Translation.\""
+    }
+}
