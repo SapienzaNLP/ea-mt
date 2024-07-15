@@ -6,6 +6,8 @@ The website is available at [https://SapienzaNLP.github.io/ea-mt](https://Sapien
 
 ## Table of Contents
 
+- [SemEval-2025](#semeval-2025)
+- [Important Dates](#important-dates)
 - [Task Description](#task-description)
     - [What is the task about?](#what-is-the-task-about)
     - [Why is the task important?](#why-is-the-task-important)
@@ -16,6 +18,27 @@ The website is available at [https://SapienzaNLP.github.io/ea-mt](https://Sapien
   - [Local Development](#local-development)
   - [Build](#build)
   - [Deployment](#deployment)
+
+## SemEval-2025
+
+SemEval is a series of international natural language processing (NLP) research workshops whose mission is to advance the current state of the art in semantic analysis and to help create high-quality annotated datasets in a range of increasingly challenging problems in natural language semantics. You can find more information about SemEval on the [official website](https://semeval.github.io/).
+
+EA-MT is Task 2 in SemEval 2025. You can read more about the other tasks on the [SemEval 2025 website: task list](https://semeval.github.io/SemEval2025/tasks.html).
+
+## Important Dates
+
+Here are the important dates for the shared task:
+- Sample data ready: **15 July 2024**
+- Training data ready: **2 September 2024**
+- Evaluation start: **10 January 2025**
+- Evaluation end: by **31 January 2025**
+- System paper submission due: **28 February 2025**
+- Task paper submission due: **7 March 2025**
+- Notification to authors: **31 March 2025**
+- Camera ready due: **21 April 2025**
+- SemEval workshop: **Summer 2025** (co-located with a major NLP conference)
+
+> **Note**: The dates are subject to change. All deadlines are 23:59 UTC-12 ("anywhere on Earth").
 
 ## Task Description
 
