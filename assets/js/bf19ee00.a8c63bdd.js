@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkea_mt_website=self.webpackChunkea_mt_website||[]).push([[415],{8031:e=>{e.exports=JSON.parse('{"metadata":{"permalink":"/ea-mt/news","page":1,"postsPerPage":10,"totalPages":1,"totalCount":1,"blogDescription":"Blog","blogTitle":"Blog"}}')}}]);
