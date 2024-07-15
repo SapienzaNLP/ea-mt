@@ -38,9 +38,9 @@ const FeatureList = [
 
 function Feature({image, title, description, link}) {
   return (
-    <div className={clsx('col col--4')}>
+    <div className={clsx('col col--4')} style={{margin: "2rem 0rem"}}>
       <div className="text--center">
-        <img src={image} alt={title} style={{width: "40%", height: "40%", marginBottom: "1rem"}} />
+        <img src={image} alt={title} style={{width: "30%", height: "30%", margin: "1rem"}} />
       </div>
       <div className="text--center padding-horiz--md">
         <Heading as="h3">{title}</Heading>
@@ -66,8 +66,9 @@ export default function HomepageFeatures() {
             <Feature key={idx} {...props} />
           ))}
         </div>
+        <br/>
+        <hr/>
       </div>
-      <hr />
     </section>
   );
 }

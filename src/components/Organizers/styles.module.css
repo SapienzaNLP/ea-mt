@@ -1,0 +1,18 @@
+.organizers {
+    display: flex;
+    align-items: center;
+    padding: 2rem 0;
+    width: 100%;
+}
+
+.organizerLogo {
+  max-height: 128px;
+  margin: 2em;
+  border-radius: 12%;
+}
+
+.organizerTitle {
+  font-size: 1.5rem;
+  margin: 0 1rem;
+  text-align: center;
+}

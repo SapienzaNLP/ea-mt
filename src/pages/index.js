@@ -3,6 +3,7 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import Organizers from '@site/src/components/Organizers';
 
 import Heading from '@theme/Heading';
 import styles from './index.module.css';
@@ -56,7 +57,7 @@ function TaskBanner() {
         </div>
 
         <div className="container">
-          <div className="row" style={{alignItems: "center", justifyContent: "center", marginTop: "1rem", marginBottom: "3rem"}}>
+          <div className="row" style={{alignItems: "center", justifyContent: "center"}}>
             <div className={clsx('col col--5', styles.taskBox)}>
               <h3 className={styles.taskSubtitle}>The Goal</h3>
               <p className={styles.taskDescription}>
@@ -88,6 +89,7 @@ export default function Home() {
       <main>
         <TaskBanner />
         <HomepageFeatures />
+        <Organizers />
       </main>
     </Layout>
   );
