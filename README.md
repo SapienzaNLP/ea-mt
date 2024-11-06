@@ -29,11 +29,10 @@ EA-MT is Task 2 in SemEval 2025. You can read more about the other tasks on the 
 
 Here are the important dates for the shared task:
 - Sample data ready: **15 July 2024**
-- Training data ready: **2 September 2024**
-- Evaluation start: **10 January 2025**
-- Evaluation end: by **31 January 2025**
-- System paper submission due: **28 February 2025**
-- Task paper submission due: **7 March 2025**
+- Training data ready: **October 2024**
+- Evaluation start: **Beginning of January 2025**
+- Evaluation end: by **Beginning of February 2025**
+- System paper submission due: **End of February 2025**
 - Notification to authors: **31 March 2025**
 - Camera ready due: **21 April 2025**
 - SemEval workshop: **Summer 2025** (co-located with a major NLP conference)
@@ -85,7 +84,7 @@ The EA-MT task will focus on the following language pairs:
 > **Note**: This edition of the EA-MT task will focus on translating from English to the target languages mentioned above. Future editions may include other language pairs.
 
 
-## How to run, modify and deploy the website
+## How to run, modify and deploy this website
 
 This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
 
@@ -126,3 +125,13 @@ $ GIT_USER=<Your GitHub username> yarn deploy
 ```
 
 If you are using GitHub pages for hosting, this command is a convenient way to build the website and push to the `gh-pages` branch.
+
+
+## License
+All the code in this repository is released under the Apache 2.0 License. See [LICENSE](LICENSE) for details.
+
+The data and other resources used in this project are released under the Creative Commons Attribution-ShareAlike 4.0 International License. See [LICENSE.data.txt](LICENSE.data.txt) for details.
+
+
+## Acknowledgments
+> Simone Conia gratefully acknowledges the support of Future AI Research ([PNRR MUR project PE0000013-FAIR](https://fondazione-fair.it/en/)), which fully funds his fellowship at Sapienza University of Rome since October 2023.
