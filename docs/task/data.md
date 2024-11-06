@@ -210,4 +210,4 @@ The training data will be provided by different sources. The source of the data 
 ## Downloads
 
 * Sample data: [link (.zip file)](/data/semeval.sample.v2.zip)
-* Training data: [link (.zip file)](/data/semeval.train.v2.zip)
+* Training data: [link (.zip file)](/data/semeval.train.v1.zip)
