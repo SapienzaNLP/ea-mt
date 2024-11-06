@@ -12,7 +12,7 @@ The data for the shared task is scheduled to be released in three stages: sample
 ## Important Dates
 
 - Sample data ready: **15 July 2024**
-- Training data ready: **2 September 2024**
+- Training data ready: **November 2024**
 - Evaluation data ready: **10 January 2025**
 - Evaluation data with target references ready: After the evaluation period ends
 
@@ -31,103 +31,183 @@ The data will be provided in the following languages:
 - English (`en`)
 
 #### Target Languages
-- Italian (`it`)
-- Spanish (`es`)
-- French (`fr`)
-- German (`de`)
-- Arabic (`ar`)
-- Japanese (`ja`)
-- Chinese (`zh`)
-- Korean (`ko`)
-- Thai (`th`)
-- Turkish (`tr`)
+- Italian (`it`): sample, training, and evaluation data
+- Spanish (`es`): sample, training, and evaluation data
+- French (`fr`): sample, training, and evaluation data
+- German (`de`): sample, training, and evaluation data
+- Arabic (`ar`): sample, training, and evaluation data
+- Japanese (`ja`): sample, training, and evaluation data
+- Chinese (`zh`): sample and evaluation data
+- Korean (`ko`): sample and evaluation data
+- Thai (`th`): sample and evaluation data
+- Turkish (`tr`): sample and evaluation data
+
 
 ## Format
+Here is a brief overview of the data format for the shared task. The data will be provided in JSONL format, where each line in the file will contain a JSON object. 
+Note that the format of the training data is different from the format of the sample and evaluation data.
 
-The data will be provided in the following format, where each line in the file will be a JSON object with the following fields:
-- `id`: A unique identifier for the data instance.
-- `source_locale`: The locale of the source text; for this edition of the task, it is always English (`en`).
-- `target_locale`: The locale of the target text.
-- `source`: A single string containing the source text in English.
-- `target`: A **list** of strings, i.e., possible translations, containing the target text in the target locale.
-- `mention`: A **list** of strings, i.e., named entities, mentioned in the translation, one for each target translation.
-- `metadata`: Additional metadata for the data instance (if available).
 
-:::warning
-The target text is provided as a list of strings to account for multiple valid translations.
-:::
-
-### Examples
-Here are a few examples of the data format. These examples have been beautified to improve readability. However, the actual data will be provided in a single line.
-
-#### Example 1
-In this example, the named entity `Yu the Great` contains a "title" in the name, which is translated as `il Grande` in Italian, i.e., part of the name is translated to the target language.
+### Sample/evaluation data format
+Each row in the dataset contains the following fields:
 ```json
 {
-  "id": "Q627784_0",
+  "id": "Q2461698_0",
+  "wikidata_id": "Q2461698",
+  "entity_types": [
+    "Fictional entity"
+  ],
+  "source": "Who are the main antagonistic forces in the World of Ice and Fire?",
+  "targets": [
+    {
+      "translation": "Chi sono le principali forze antagoniste nel mondo delle Cronache del ghiaccio e del fuoco?",
+      "mention": "mondo delle Cronache del ghiaccio e del fuoco"
+    }
+  ],
   "source_locale": "en",
   "target_locale": "it"
-  "source": "How is Yu the Great remembered and honored in Chinese history and culture today?",
-  "target": [
-    "Come viene ricordato e onorato attualmente Yu il Grande nella storia e nella cultura cinese?",
-    "Come viene ricordato e onorato Yu il Grande nella storia e nella cultura cinese oggi?"
-  ],
-  "mention": [
-    "Yu il Grande",
-    "Yu il Grande"
-  ],
-  "metadata": {
-    "wikidata_id": "Q627784",
-  }
 }
 ```
+Where:
+* `id` is a unique identifier for the row, usually in the format `<entity_id>_<q_id>`, where `<entity_id>` is the entity ID in Wikidata and `<q_id>` is the question ID (from 0 to 4).
+* `wikidata_id` is the QID of the entity in Wikidata.
+* `entity_types` is a list of types of the entity; not all entities have types.
+* `source` is the source text in English.
+* `targets` is a list of translations in the target language, where each translation contains:
+    * `translation` is the translation of the source text in the target language.
+    * `mention` is the mention of the entity in the translation.
+* `source_locale` is the source language.
+* `target_locale` is the target language.
 
-#### Example 2
-In this example, the named entity `World of Ice and Fire` is translated as `mondo delle **Cronache** del ghiaccio e del fuoco` in Italian, i.e., the target name contains an additional word `Cronache` (`Cronicles`) that is not present in the source name.
+In the example above, the entity is the "World of Ice and Fire" and the translation is "mondo delle Cronache del ghiaccio e del fuoco", which are not 1-to-1 translations as the Italian version also includes "delle Cronache" ("of the Chronicles"). You can check out more examples below.
+
+#### Examples
+* **Ring a Ring o' Roses** is translated as **Girotondo** in Italian:
+  ```json
+  {
+    "id": "Q746666_0",
+    "wikidata_id": "Q746666",
+    "entity_types": [
+      "Musical work"
+    ],
+    "source": "Can you sing the chorus of the folk song Ring a Ring o' Roses?",
+    "targets": [
+      {
+        "translation": "Puoi cantare il ritornello della canzone popolare Girotondo?",
+        "mention": "Girotondo"
+      },
+      {
+        "translation": "Sai cantare il ritornello del girotondo, la canzone popolare?",
+        "mention": "girotondo"
+      }
+    ],
+    "source_locale": "en",
+    "target_locale": "it"
+  }
+  ```
+
+* **Mary of Burgundy** is translated as **Maria di Borgogna** and **Maximilian I** is translated as **Massimiliano I** in Italian:
+  ```json
+  {
+    "id": "Q157073_0",
+    "wikidata_id": "Q157073",
+    "entity_types": [
+      "Person"
+    ],
+    "source": "How long was Mary of Burgundy married to Emperor Maximilian I?",
+    "targets": [
+      {
+        "translation": "Per quanto tempo Maria di Borgogna è stata sposata con l'imperatore Massimiliano I?",
+        "mention": "Maria di Borgogna"
+      },
+      {
+        "translation": "Per quanto tempo Maria di Borgogna è stata sposata con l'imperatore Massimiliano I",
+        "mention": "Maria di Borgogna"
+      }
+    ],
+    "source_locale": "en",
+    "target_locale": "it"
+  }
+  ```
+
+* **Little Women** is translated as **Mujercitas** in Spanish:
+  ```json
+  {
+    "id": "Q850522_0",
+    "wikidata_id": "Q850522",
+    "entity_types": [
+      "Movie"
+    ],
+    "source": "Who are the main characters in the movie Little Women?",
+    "targets": [
+      {
+        "translation": "¿Quiénes son los personajes principales de la película Mujercitas?",
+        "mention": "Mujercitas"
+      }
+    ],
+    "source_locale": "en",
+    "target_locale": "es"
+  }
+  ```
+
+* **A Room of One's Own** is translated as **Una habitación propia** in Spanish:
+  ```json
+  {
+    "id": "Q1204366_1",
+    "wikidata_id": "Q1204366",
+    "entity_types": [
+      "Book"
+    ],
+    "source": "Who is the author of the book A Room of One's Own?",
+    "targets": [
+      {
+        "translation": "¿Quién es el autor del libro Una habitación propia?",
+        "mention": "Una habitación propia"
+      },
+      {
+        "translation": "¿Quién es el autor del libro Una habitacion propia?",
+        "mention": "Una habitacion propia"
+      }
+    ],
+    "source_locale": "en",
+    "target_locale": "es"
+  }
+  ```
+
+### Training data format
+The training data will be provided in a different format, where each row in the dataset contains the following fields:
 ```json
 {
-  "id": "Q2461698_2",
+  "source": "Did Gone With The Wind come out before 1940?",
+  "target": "Via col vento è uscito prima del 1940?",
+  "entities": [
+    "Q2875"
+  ],
   "source_locale": "en",
   "target_locale": "it",
-  "source": "What are some prominent locations in the World of Ice and Fire?",
-  "target": [
-    "Quali sono alcuni luoghi di spicco nel mondo delle Cronache del ghiaccio e del fuoco?",
-    "Quali sono alcuni luoghi di rilievo nel mondo delle Cronache del ghiaccio e del fuoco?"
-  ],
-  "mention": [
-    "mondo delle Cronache del ghiaccio e del fuoco",
-    "mondo delle Cronache del ghiaccio e del fuoco"
-  ],
-  "metadata": {
-    "wikidata_id": "Q2461698",
-  }
+  "instance_id": "826528e6",
+  "from": "mintaka",
 }
 ```
+Where:
+* `source` is the source text in English.
+* `target` is the translation of the source text in the target language.
+* `entities` is a list of Wikidata IDs of the entities mentioned in the source text.
+* `source_locale` is the source language.
+* `target_locale` is the target language.
+* `instance_id` is a unique identifier for the row.
+* `from` is the source of the data.
 
-#### Example 3
-In this example, the named entity `Sweet Magnolias` is translated as `Il colore delle magnolie` in Italian, i.e., the target name is very different from the source name, as the literal translation would be `Dolci magnolie`.
-```json
-{
-  "id": "Q56800842_1",
-  "source_locale": "en",
-  "target_locale": "it",
-  "source": "How many seasons of Sweet Magnolias are available on Netflix?",
-  "target": [
-    "Quante stagioni de Il colore delle magnolie sono disponibili su Netflix?",
-    "Quante stagioni del Il colore delle magnolie sono disponibili su Netflix?",
-    "Quante stagioni di Il colore delle magnolie sono disponibili su Netflix?"
-  ],
-  "mention": [
-    "Il colore delle magnolie",
-    "Il colore delle magnolie",
-    "Il colore delle magnolie"
-  ],
-  "metadata": {
-    "wikidata_id": "Q56800842",
-  }
-}
-```
+#### Source of the data
+The training data will be provided by different sources. The source of the data will be provided in the `from` field (currently, the only source is `mintaka` but we plan to add more sources in the future).
 
-## Download
 
-* Sample data: [link (.zip file)](/data/sample.zip)
+| Source | Description | Notes | License | Link |
+| --- | --- | --- | --- | --- |
+|`mintaka` | Mintaka is a multilingual question answering dataset based on Wikidata. | Entity subset. | CC-BY | [Mintaka](https://github.com/amazon-science/mintaka) |
+
+
+## Downloads
+
+* Sample data: [link (.zip file)](/data/semeval.sample.v2.zip)
+* Training data: [link (.zip file)](/data/semeval.train.v2.zip)
