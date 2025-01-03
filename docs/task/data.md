@@ -7,7 +7,7 @@ sidebar_position: 3
 
 The data for the shared task is scheduled to be released in three stages: sample data, training data, and evaluation data. The sample data will be released first to give participants an idea of the data format and the task. The training data will be released next to allow participants to train their systems. The evaluation data -- without the target references -- will be released last for participants to evaluate their systems. The target references for the evaluation data will be released after the evaluation period ends.
 
-* Jump to the ["Download" section](#download)
+* Jump to the ["Download" section](#downloads) to download the data.
 
 ## Important Dates
 
@@ -208,6 +208,25 @@ The training data will be provided by different sources. The source of the data 
 
 
 ## Downloads
+Here are the download links for the data for the shared task:
 
-* Sample data: [link (.zip file)](/data/semeval.sample.v2.zip)
-* Training data: [link (.zip file)](/data/semeval.train.v2.zip)
+
+| Data Type | Description | Download |
+| --------- | ----------- | -------- |
+| Sample data | Sample data to show format and task requirements | [link (.zip file)](/data/semeval.sample.v2.zip) |
+| Validation data | Dataset for model development/validation | [link (.zip file)](/data/semeval.validation.v2.zip) |
+| Training data | Additional data for model training | [link (.zip file)](/data/semeval.train.v2.zip) |
+| Prediction data | Predictions by GPT4o and GPT4o-mini | [link (.zip file)](/data/semeval.predictions.v2.zip) |
+
+
+### Sample Data
+The sample data contains a small subset of the data to give participants an idea of the data format and the task. When you are comfortable with the data format, you can use the sample data as a starting point to develop your models, including **training** and **evaluation**.
+
+### Validation Data
+The validation data is a larger dataset that you can use to develop and validate your models. The validation data is similar to the sample data but contains more examples. The main uses of the validation data are **model selection** and **hyperparameter tuning**, but you can also use (part of) the validation data for **fine-tuning** your models.
+
+### Training Data
+The training data is a larger dataset that you can use to train your models. Note that the training data is different from the sample and validation data in terms of distribution and size. The main use of the training data is to train your models.
+
+### Prediction Data
+The prediction data contains the predictions by GPT4o and GPT4o-mini. You can use this data to compare your predictions with the predictions by GPT4o and GPT4o-mini. You can also use this data to analyze the performance of your models or build on top of the predictions by GPT4o and GPT4o-mini.
