@@ -59,6 +59,16 @@ To help participants evaluate their systems, we provide the following evaluation
 - [M-ETA Evaluation Notebook](https://github.com/SapienzaNLP/ea-mt-eval/blob/main/notebooks/entity_eval.ipynb)
 
 ### How to use the notebooks
+You can use the evaluation notebooks to evaluate your systems on the sample and validation data. The notebooks will guide you through the evaluation process and provide you with the evaluation scores.
+
+#### Prerequisites
+Download the data and set up the environment as described below before running the notebooks. We set up the notebooks to use the data from the `data` folder in the repository.
+
+```
+# Clone the repository
+git clone https://github.com/SapienzaNLP/ea-mt-eval
+cd ea-mt-eval
+```
 
 #### Setup the environment for the notebooks
 We recommend using `conda` to manage the environment and dependencies. If you don't have `conda` installed, you can download it [here](https://docs.conda.io/en/latest/miniconda.html).
@@ -96,3 +106,11 @@ data/
 
 You can download the `data` folder from the [Data section](/docs/task/data#downloads) of the website.
 
+
+#### Running the notebooks
+You can run the notebooks using Jupyter Notebook or Jupyter Lab. To start the Jupyter Notebook server, run the following command:
+```
+jupyter notebook
+```
+
+This will open a new tab in your browser with the Jupyter Notebook interface. You can navigate to the `notebooks` folder and open the evaluation notebooks to start evaluating your systems.

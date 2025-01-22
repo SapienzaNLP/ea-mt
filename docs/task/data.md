@@ -216,6 +216,7 @@ Here are the download links for the data for the shared task:
 | Sample data | Sample data to show format and task requirements | [link (.zip file)](/data/semeval.sample.v2.zip) |
 | Validation data | Dataset for model development/validation | [link (.zip file)](/data/semeval.validation.v2.zip) |
 | Training data | Additional data for model training | [link (.zip file)](/data/semeval.train.v2.zip) |
+| **Test data** (no targets) | Dataset for evaluation where the targets are hidden | [link (.zip file)](/data/semeval.test_hidden.v2.zip) |
 | Prediction data | Predictions by GPT4o and GPT4o-mini | [link (.zip file)](/data/semeval.predictions.v2.zip) |
 
 
@@ -227,6 +228,9 @@ The validation data is a larger dataset that you can use to develop and validate
 
 ### Training Data
 The training data is a larger dataset that you can use to train your models. Note that the training data is different from the sample and validation data in terms of distribution and size. The main use of the training data is to train your models.
+
+### Test Data
+The test data is the dataset for evaluation. The test data does not contain the target references, so you can use the sample and validation data to evaluate your systems. The test data is similar to the sample and validation data but contains more examples. The main use of the test data is to evaluate your systems. We will release the target references after the evaluation period ends.
 
 ### Prediction Data
 The prediction data contains the predictions by GPT4o and GPT4o-mini. You can use this data to compare your predictions with the predictions by GPT4o and GPT4o-mini. You can also use this data to analyze the performance of your models or build on top of the predictions by GPT4o and GPT4o-mini.
